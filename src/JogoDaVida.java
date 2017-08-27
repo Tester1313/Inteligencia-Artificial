@@ -19,7 +19,7 @@ public class JogoDaVida {
 		matriz.setMatriz(new int[le.getLinha()][le.getColuna()]); // seta a matriz
 		matriz.setAux_matriz(new int[le.getLinha()][le.getColuna()]);
 		
-		matriz.preencherMatriz(le.getLinha(),le.getColuna());
+		matriz.preencherMatriz();
 		
 		matriz.ImprimirMatriz();
 		

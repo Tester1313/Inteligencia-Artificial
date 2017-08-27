@@ -20,10 +20,10 @@ public class Matriz {
 		}
 		
 		// Coloca valores na matriz criada
-		public void preencherMatriz(int linha, int coluna){
+		public void preencherMatriz(){
 			for(int i = 0; i < matriz.length; i++) {
 				for(int j = 0; j < matriz[i].length; j++) {
-					if(i == 0 || j ==0 || j == (coluna-1) || i == (linha-1) || (i & j) == 3) {
+					if(i == 0 || j ==0 || j == (matriz[i].length -1) || i == (matriz.length-1) || (i & j) == 3) {
 						matriz[i][j] = 0;
 					}else {
 						matriz[i][j] = 1;
