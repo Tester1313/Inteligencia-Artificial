@@ -23,7 +23,7 @@ public class JogoDaVida {
 		le.leituraDeArquivo(nome); // le  arquivo
 		
 		matriz.setMatriz(new int[le.getLinha()][le.getColuna()]); // seta a matriz
-		matriz.setAux_matriz(new int[le.getLinha()][le.getColuna()]);
+		matriz.setabrobrinha(new int[le.getLinha()][le.getColuna()]);
 		
 		matriz.preencherMatriz(le.getLinha(),le.getColuna());
 		
