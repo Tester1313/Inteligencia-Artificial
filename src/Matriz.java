@@ -6,21 +6,21 @@ public class Matriz {
 	
 	
 		private int[][] matriz;
-		private int[][] abrobrinha;
+		private int[][] aux_matriz;
 		
 		public Matriz() {	}
 		
-		public Matriz(int[][] matriz, int[][] abrobrinha) {
+		public Matriz(int[][] matriz, int[][] aux_matriz) {
 			this.matriz = matriz;
-			this.abrobrinha = abrobrinha; 
+			this.aux_matriz = aux_matriz; 
 		}
 		
-		public int[][] getabrobrinha() {
-			return abrobrinha;
+		public int[][] getaux_matriz() {
+			return aux_matriz;
 		}
 
-		public void setabrobrinha(int[][] abrobrinha) {
-			this.abrobrinha = abrobrinha;
+		public void setAux_matriz(int[][] aux_matriz) {
+			this.aux_matriz = aux_matriz;
 		}
 
 		public int[][] getMatriz() {
@@ -59,7 +59,7 @@ public class Matriz {
 			//int aux = 0;
 			int vivas = 0;
 			
-			//abrobrinha = matriz;
+			//aux_matriz = matriz;
 			
 			for(int i = 1; i < (matriz.length - 1); i++) {
 				for(int j = 1; j < (matriz[i].length - 1); j++) {
@@ -97,16 +97,16 @@ public class Matriz {
 						}*/
 						
 						if(vivas >= 3 && matriz[i][j] == 0) { // Nascimento
-							abrobrinha[i][j] = 1;
+							aux_matriz[i][j] = 1;
 							
 						} else if(vivas >=2 && vivas <=3 && matriz[i][j] == 1) { //Sobrevivencia
-							abrobrinha[i][j] = 1;
+							aux_matriz[i][j] = 1;
 									
 						} else if( vivas < 2 && matriz[i][j] == 1) { // Morte por solidão
-							abrobrinha[i][j] = 0;
+							aux_matriz[i][j] = 0;
 							
 						} else if( vivas > 3 && matriz[i][j] == 1) { // Morte por superpopulação
-							abrobrinha[i][j] = 0;
+							aux_matriz[i][j] = 0;
 						}
 					vivas = 0;
 					
@@ -120,7 +120,7 @@ public class Matriz {
 		public void PassaValores() {
 			for(int i = 0; i < matriz.length; i++) {
 				for(int j = 0; j < matriz[i].length; j++) {
-					this.matriz[i][j] = abrobrinha[i][j]; 
+					this.matriz[i][j] = aux_matriz[i][j]; 
 				}
 			}
 		}
