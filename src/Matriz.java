@@ -1,19 +1,8 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-
 public class Matriz {
 	
 	
 		private int[][] matriz;
 		private int[][] aux_matriz;
-		
-		public Matriz() {	}
-		
-		public Matriz(int[][] matriz, int[][] aux_matriz) {
-			this.matriz = matriz;
-			this.aux_matriz = aux_matriz; 
-		}
 		
 		public int[][] getaux_matriz() {
 			return aux_matriz;
@@ -30,6 +19,7 @@ public class Matriz {
 			this.matriz = matriz;
 		}
 		
+		// Coloca valores na matriz criada
 		public void preencherMatriz(int linha, int coluna){
 			for(int i = 0; i < matriz.length; i++) {
 				for(int j = 0; j < matriz[i].length; j++) {
@@ -40,10 +30,9 @@ public class Matriz {
 					} 
 				}
 			}
-			
 		}
 		
-		
+		// Imprime a matriz
 		public void ImprimirMatriz() {
 			System.out.println("Matriz");
 			
@@ -55,6 +44,7 @@ public class Matriz {
 			}
 		}
 		
+		// Metodo Gerãção é responsável por todo o controle de morte e nascimento de celulas
 		public void Geracao() {
 			//int aux = 0;
 			int vivas = 0;
@@ -109,14 +99,12 @@ public class Matriz {
 							aux_matriz[i][j] = 0;
 						}
 					vivas = 0;
-					
-					
 				}
 			}
-			this.PassaValores();
-			
+			this.PassaValores(); 
 		}
 		
+		// Metodo que Passa Valores da matriz Auxiliar para Matriz Principal
 		public void PassaValores() {
 			for(int i = 0; i < matriz.length; i++) {
 				for(int j = 0; j < matriz[i].length; j++) {
