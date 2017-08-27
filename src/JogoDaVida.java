@@ -1,13 +1,6 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 // Caminho do Arquivo do meu computador c:\teste\a.txt
-
-import com.sun.javafx.scene.layout.region.Margins.Converter;
-
 public class JogoDaVida {
 	public static void main(String[] args) {
 		LeArquivo le = new LeArquivo();
@@ -20,6 +13,7 @@ public class JogoDaVida {
 		System.out.println("Digite o caminho do arquivo: ");
 		nome = scan.nextLine();
 		
+		scan.close();
 		le.leituraDeArquivo(nome); // le  arquivo
 		
 		matriz.setMatriz(new int[le.getLinha()][le.getColuna()]); // seta a matriz

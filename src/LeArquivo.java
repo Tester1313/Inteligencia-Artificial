@@ -3,8 +3,8 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class LeArquivo {
-	int linha;
-	int coluna;
+	private int linha;
+	private int coluna;
 	
 	public int getLinha() {
 		return linha;
@@ -44,7 +44,8 @@ public class LeArquivo {
 			this.setLinha(teste[0]); // set atributo linha com o valor de quantas linhas terá a matriz 
 			this.setColuna(teste[1]);  // set atributo coluna com o valor de quantas colunas terá a matriz
 			
-			}catch(IOException e){
+			lerArq.close();
+			}catch(IOException e){ // Caso de erro é apresentado o Erro
 				System.out.println(e.getMessage());
 		}
 	}
