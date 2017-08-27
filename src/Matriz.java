@@ -9,11 +9,19 @@ public class Matriz {
 		private int[][] aux_matriz;
 		
 		public Matriz() {	}
-		public Matriz(int linha, int coluna) {
-			this.matriz= new int[linha][coluna];
-			this.aux_matriz = getMatriz();
+		
+		public Matriz(int[][] matriz, int[][] aux_matriz) {
+			this.matriz = matriz;
+			this.aux_matriz = aux_matriz;
+		}
+		
+		public int[][] getAux_matriz() {
+			return aux_matriz;
 		}
 
+		public void setAux_matriz(int[][] aux_matriz) {
+			this.aux_matriz = aux_matriz;
+		}
 
 		public int[][] getMatriz() {
 			return matriz;
@@ -51,22 +59,22 @@ public class Matriz {
 			//int aux = 0;
 			int vivas = 0;
 			
-			aux_matriz = matriz;
+			//aux_matriz = matriz;
 			
-			for(int i = 2; i < (matriz.length - 1); i++) {
-				for(int j = 2; j < (matriz[i].length - 1); j++) {
-					int a = i-1;
-					if(matriz[i-1][j-1] == 1) {
+			for(int i = 1; i < (matriz.length - 1); i++) {
+				for(int j = 1; j < (matriz[i].length - 1); j++) {
+					//int a = i-1;
+					/*if(matriz[i-1][j-1] == 1) {
 							vivas++;;
-						}
+						}*/
 					
 						if(matriz[i-1][j] == 1) {
 							vivas++;;
 						}
 						
-						if(matriz[i-1][j+1] == 1) {
+						/*if(matriz[i-1][j+1] == 1) {
 							vivas++;;
-						}
+						}*/
 						
 						if(matriz[i][j+1] == 1) {
 							vivas++;;
@@ -80,13 +88,13 @@ public class Matriz {
 							vivas++;
 						}
 						
-						if(matriz[i+1][j-1] == 1) {
+						/*if(matriz[i+1][j-1] == 1) {
 							vivas++;
 						}
 						
 						if(matriz[i+1][j+1] == 1) {
 							vivas++;
-						}
+						}*/
 						
 						if(vivas == 3 && matriz[i][j] == 0) { // Nascimento
 							aux_matriz[i][j] = 1;
@@ -100,10 +108,10 @@ public class Matriz {
 						} else if( vivas > 3 && matriz[i][j] == 1) { // Morte por superpopulação
 							aux_matriz[i][j] = 0;
 						}
+					vivas = 0;
+					
 					
 				}
-				vivas = 0;
-				System.out.println();
 			}
 			matriz = aux_matriz;
 		}
